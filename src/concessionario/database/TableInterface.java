@@ -2,6 +2,8 @@ package concessionario.database;
 
 import java.util.Collection;
 
+import concessionario.core.Dipendente;
+
 public interface TableInterface<K, V> {
 	
 	public Boolean insert(V v);
