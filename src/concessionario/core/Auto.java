@@ -19,4 +19,10 @@ public class Auto extends Veicolo {
 		super.Visualizza();
 		System.out.println("Con " + getNumPorte() + " porte");
 	}
+	public String toString() {
+		//super.toString();
+		return getTarga() + ";" + getProduttore() + ";"
+				+ getModello() + ";" + getAlimentazione() + ";" + getColore()
+				+ ";" + getPrezzo() + ";" + getNumPorte() + "\n";
+	}
 }

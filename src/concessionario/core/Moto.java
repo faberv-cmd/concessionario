@@ -19,4 +19,11 @@ public class Moto extends Veicolo {
 		System.out.println("Con un'altezza del sedile pari a " + getAltezzaSedile());
 		
 	}
+	
+	public String toString() {
+		super.toString();
+		return getTarga() + ";" + getProduttore() + ";"
+				+ getModello() + ";" + getAlimentazione() + ";" + getColore()
+				+ ";" + getPrezzo() + ";" + getAltezzaSedile() + "\n";
+	}
 }

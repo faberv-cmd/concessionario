@@ -1,6 +1,6 @@
 package concessionario.core;
 
-import sun.tools.tree.ThisExpression;
+
 
 public  class Veicolo {
 	protected String targa, produttore, modello, alimentazione,colore;
@@ -59,11 +59,12 @@ public  class Veicolo {
 		System.out.println(this.toString());
 	}
 	
+	/*
 	public String toString() {
 		return getTarga() + ";" + getProduttore() + ";"
 				+ getModello() + ";" + getAlimentazione() + ";" + getColore()
 				+ ";" + this.getPrezzo() + "\n";
 	}
-	
+	*/
 	
 }
