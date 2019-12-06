@@ -30,26 +30,27 @@ public class DriverDiskVeicolo<V> implements DriverInterface {
 
 	public Boolean write(Collection v) {
 		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\First\\git\\concessionario\\src\\concessionario\\database\\Veicoli.txt"));
+			BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\PCFIRSTCONSULTING\\Desktop\\concessionario\\concessionario\\src\\concessionario\\database\\Veicoli.txt"));
 			
 			
 			
 			Iterator i = v.iterator();
+			 Object m;
 			
 			while(i.hasNext()) {
-				
-				if(i.next() instanceof Auto) {
+				m = i.next();
+				if(m instanceof Auto) {
 				
 				writer.write("auto;");
-				writer.write(i.toString());
+				writer.write(m.toString());
 				
 				}
-				/*
-				if(i.next() instanceof Moto) {
+				
+				if(m instanceof Moto) {
 					writer.write("moto;");
-					writer.write(i.next().toString());
+					writer.write(m.toString());
 				}
-				*/
+				
 				
 			}
 			
@@ -68,7 +69,7 @@ public class DriverDiskVeicolo<V> implements DriverInterface {
 
 	public Collection<Veicolo> read(){
 		try {
-			BufferedReader reader= new BufferedReader(new FileReader("C:\\Users\\First\\git\\concessionario\\src\\concessionario\\database\\Veicoli.txt"));
+			BufferedReader reader= new BufferedReader(new FileReader("C:\\Users\\PCFIRSTCONSULTING\\Desktop\\concessionario\\concessionario\\src\\concessionario\\database\\Veicoli.txt"));
 			String next;
 			List<Veicolo> newDb = new ArrayList<>();
 			do {
