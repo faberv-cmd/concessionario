@@ -1,11 +1,14 @@
 package concessionario.database;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import concessionario.core.Auto;
@@ -19,11 +22,34 @@ public class DriverDiskVeicolo<V> implements DriverInterface {
 	static Double prezzo;
 	static Double altezzaSedile;
 	
+	
+	
 	public DriverDiskVeicolo() {
 		this.db = new ArrayList<>();
 	}
 
 	public Boolean write(Collection v) {
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\First\\git\\concessionario\\src\\concessionario\\database\\Veicoli.txt"));
+			
+			
+			
+			Iterator i = v.iterator();
+			
+			while(i.hasNext()) {
+				
+				writer.write(i.next().toString());
+			}
+			
+			
+			writer.close();
+		}
+		
+		catch (IOException e) {
+			System.out.println("ERRORE DI I/O");
+			System.out.println(e);
+			return null;
+		}
 		return null;
 		
 	}
@@ -42,13 +68,14 @@ public class DriverDiskVeicolo<V> implements DriverInterface {
 						prezzo=Double.parseDouble(values[6]);
 						numPorte=Integer.parseInt(values[7]);
 						newDb.add(new Auto(values[1], values[2], values[3], values[4], values[5],prezzo,numPorte));
-						
+						System.out.println(values[0]);
 						
 					}
 					else if(values[0].equals("moto")) {
 						prezzo=Double.parseDouble(values[6]);
 						altezzaSedile= Double.parseDouble(values[7]);
 						newDb.add(new Moto(values[1], values[2], values[3], values[4], values[5],prezzo,altezzaSedile));
+						System.out.println(values[0]);
 						
 					}
 				}
@@ -56,7 +83,8 @@ public class DriverDiskVeicolo<V> implements DriverInterface {
 			
 			
 			reader.close();
-			System.out.println(newDb);
+			
+			
 			return newDb;
 		}
 		
