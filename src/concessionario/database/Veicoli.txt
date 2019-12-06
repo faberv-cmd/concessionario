@@ -1,2 +1,1 @@
-auto;DAGA;mercedes;classe a;benzina;blu;34000.00;3
-moto;FAFA;yamaha;classe a;benzina;blu;34000.00;123.23
+auto;java.util.ArrayList$Itr@4e50df2e

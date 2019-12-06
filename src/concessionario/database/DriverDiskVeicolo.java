@@ -38,7 +38,19 @@ public class DriverDiskVeicolo<V> implements DriverInterface {
 			
 			while(i.hasNext()) {
 				
-				writer.write(i.next().toString());
+				if(i.next() instanceof Auto) {
+				
+				writer.write("auto;");
+				writer.write(i.toString());
+				
+				}
+				/*
+				if(i.next() instanceof Moto) {
+					writer.write("moto;");
+					writer.write(i.next().toString());
+				}
+				*/
+				
 			}
 			
 			
