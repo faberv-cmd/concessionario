@@ -81,8 +81,7 @@ public class DriverDiskVeicolo<V> implements DriverInterface {
 						prezzo=Double.parseDouble(values[6]);
 						numPorte=Integer.parseInt(values[7]);
 						newDb.add(new Auto(values[1], values[2], values[3], values[4], values[5],prezzo,numPorte));
-						System.out.println(values[0]);
-						
+							
 					}
 					else if(values[0].equals("moto")) {
 						prezzo=Double.parseDouble(values[6]);
